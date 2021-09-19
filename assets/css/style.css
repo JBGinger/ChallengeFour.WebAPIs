@@ -20,6 +20,18 @@ body {
     height: 100vh;
 }
 
+#coding-quiz-title, #start-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#description-paragraph {
+    text-align: center;
+}
+
 .container {
     width: 800px;
     max-width: 80%;
@@ -52,5 +64,9 @@ body {
 }
 
 .button:hover {
-    background-color: lightblue;
+    background-color: darkblue;
+}
+
+.hidden {
+    display: none;
 }
