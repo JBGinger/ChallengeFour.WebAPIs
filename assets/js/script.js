@@ -85,7 +85,7 @@ function EndQuiz() {
 
 function ClearHighScores() {
     highScoresArray = [];
-    DisplayHighScores();
+    RestartQuiz();
 }
 
 function DisplayHighScores() {
