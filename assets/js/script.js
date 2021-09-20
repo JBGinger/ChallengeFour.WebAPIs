@@ -30,7 +30,7 @@ const answerResult = document.getElementById("answer-result");
 const finalScore = document.getElementById('display-final-score');
 const highScores = document.getElementById('high-scores');
 const timeDisplay = document.getElementById('time-left');
-const clearScoresButton = document.getElementById('high-scores');
+const clearScoresButton = document.getElementById('clear-scores');
 clearScoresButton.addEventListener('click', ClearHighScores);
 
 var currentQuestion = 0;
@@ -84,7 +84,8 @@ function EndQuiz() {
 }
 
 function ClearHighScores() {
-    highScoresArray();
+    highScoresArray = [];
+    DisplayHighScores();
 }
 
 function DisplayHighScores() {
