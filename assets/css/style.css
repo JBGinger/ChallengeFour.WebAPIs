@@ -5,11 +5,9 @@
     box-sizing: border-box;
 }
 
-.page-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px 35px;
+#time-left {
+    position: absolute;
+    right: 10px;
 }
 
 body {
@@ -61,10 +59,26 @@ body {
     border-radius: 5px;
     padding: 5px;
     width: 20%;
+    height: 5vh;
 }
 
 .button:hover {
     background-color: darkblue;
+}
+
+#answer-result {
+    opacity: 75%;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+#results-title {
+    font-size: 28px;
+}
+
+#display-final-score {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .hidden {

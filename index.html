@@ -5,11 +5,12 @@
     <title>Quiz!</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
+
   <body>
-    <header class="page-header">
-      <a href="">View high scores</a>
-      <span></span>
-    </header>
+    <div id="scores">
+      <button id="high-scores-link" onclick="DisplayHighScores()">View high scores</button>
+    </div>
+      <div id="time-left">Time Left: <span id="clock">0</span></div>
       <section id="start-page" class="container">
         <h1 id="coding-quiz-title">Coding Quiz Challenge</h1>
         <p id="description-paragraph">
@@ -18,15 +19,38 @@
         </p>
         <button id="start-button" class="button">Start Quiz</button>
       </section>
-      <section id="question-one" class="container hidden">
+
+      <section id="question-page" class="container hidden">
         <div id="question">Question</div>
           <div id="answer-options" class="button-column">
-                <button class="button" id="A1">Answer 1</button>
-                <button class="button" id="A2">Answer 2</button>
-                <button class="button" id="A3">Answer 3</button>
-                <button class="button" id="A4">Answer 4</button>
+                <button class="button" id="Answer1">Answer 1</button>
+                <button class="button" id="Answer2">Answer 2</button>
+                <button class="button" id="Answer3">Answer 3</button>
+                <button class="button" id="Answer4">Answer 4</button>
+                <span id="answer-result" class="hidden">placeholder</span>
           </div>
       </section>
+
+      <section id="results-page" class="container hidden">
+        <h1 id="results-title">All Done!</h1>
+        <div id="display-final-score">Your final score is:</div>
+        <span>Enter initials:</span>
+        <label for="initials"></label>
+        <input 
+        id="initials"
+        type="text"
+        placeholder="Enter your initials here!"
+        />
+        <button id="submit-button" class="button">Submit</button>
+      </section>
+
+      <section id="high-score-page" class="container hidden">
+        <h1 id="high-scores-title">High Scores</h1>
+          <div id="high-scores">placeholder</div>
+          <button id="back-button" class="button">Go Back</button>
+          <button id="clear-scores" class="button">Clear High Scores</button>
+      </section>
+
     <script src="assets/js/script.js"></script>
   </body>
 </html>
