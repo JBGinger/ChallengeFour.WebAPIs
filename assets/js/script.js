@@ -56,7 +56,7 @@ function StartQuiz() {
 
 function Timer(){
     var sec = 60;
-    var timer = setInterval(function(){
+    timer = setInterval(function(){
         clock.innerHTML=''+sec;
         sec--;
         if (sec < 0) {
@@ -66,9 +66,13 @@ function Timer(){
 }
 
 function UserSubmit() {
-    var result = userInitials.textContent + " " + finalScore.textContent;
+    var result = userInitials.value + " " + finalScore.textContent;
     highScoresArray.push(result);
-    return result;
+    let resultHTML = "";
+    for (var i=0;  i < highScoresArray.length; i++) {
+        resultHTML += "<li>" + highScoresArray[i] + "</li>";
+    }
+    return resultHTML;
 }
 
 function EndQuiz() {
@@ -76,7 +80,7 @@ function EndQuiz() {
     timeDisplay.classList.add('hidden');
     questionPage.classList.add('hidden');
     resultsPage.classList.remove('hidden');
-    finalScore.innerHTML = "Your final score is: " + clock.textContent;
+    finalScore.innerHTML = clock.textContent;
     clearInterval(timer);
 }
 
