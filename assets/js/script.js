@@ -84,7 +84,7 @@ function EndQuiz() {
 }
 
 function ClearHighScores() {
-    highScores.add('hidden');
+    highScoresArray();
 }
 
 function DisplayHighScores() {
