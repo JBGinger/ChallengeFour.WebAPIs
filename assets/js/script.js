@@ -10,7 +10,7 @@ const goBackBtn = document.getElementById("back-button");
 goBackBtn.addEventListener('click', RestartQuiz);
 
 var userInitials = document.getElementById("initials");
-var timeToFinish = document.getElementById("clock");
+var clock = document.getElementById("clock");
 
 const A1Button = document.getElementById("Answer1");
 A1Button.addEventListener('click', Answer1);
@@ -52,7 +52,7 @@ function StartQuiz() {
 function Timer(){
     var sec = 60;
     var timer = setInterval(function(){
-        document.getElementById('clock').innerHTML=''+sec;
+        clock.innerHTML=''+sec;
         sec--;
         if (sec < 0) {
             clearInterval(timer);
@@ -61,7 +61,7 @@ function Timer(){
 }
 
 function UserSubmit() {
-    var result = userInitials + " " + timeToFinish
+    var result = userInitials + " " + clock.text;
     highScoresArray.push(result);
     return result;
 }
@@ -70,7 +70,8 @@ function EndQuiz() {
     console.log("Hello");
     questionPage.classList.add('hidden');
     resultsPage.classList.remove('hidden');
-    finalScore.innerHTML = "Your final score is: " + timeToFinish;
+    finalScore.innerHTML = "Your final score is: " + clock.text;
+    
 }
 
 function DisplayHighScores() {
