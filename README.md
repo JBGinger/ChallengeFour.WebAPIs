@@ -30,4 +30,4 @@ Files(-) and Directories(*) in this project:\
 -README.md
 
 Screenshot of application:\
-![alt text](assets/images/screenshot.png)
+![alt text](assets/images/Screenshot.png)
