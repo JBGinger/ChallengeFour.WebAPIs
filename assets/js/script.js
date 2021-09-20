@@ -30,15 +30,20 @@ const questionLabel = document.getElementById("question");
 const answerResult = document.getElementById("answer-result");
 const finalScore = document.getElementById('display-final-score');
 const highScores = document.getElementById('high-scores');
+const timeDisplay = document.getElementById('time-left');
+const clearScoresButton = document.getElementById('high-scores');
+clearScoresButton.addEventListener('click', ClearHighScores);
 
 var currentQuestion = 0;
 var numQuestions = 0;
 var correctAnswers = 0;
+var timer;
 
 var highScoresArray = [];
 
 function StartQuiz() {
     currentQuestion = 0;
+    timeDisplay.classList.remove('hidden');
     startPage.classList.add('hidden');
     questionPage.classList.remove('hidden');
     questionLabel.innerHTML = questions[currentQuestion].question;
@@ -47,7 +52,7 @@ function StartQuiz() {
     A3Button.innerHTML = questions[currentQuestion].answers[2].text;
     A4Button.innerHTML = questions[currentQuestion].answers[3].text;
     numQuestions = questions.length;
-};
+}
 
 function Timer(){
     var sec = 60;
@@ -61,17 +66,22 @@ function Timer(){
 }
 
 function UserSubmit() {
-    var result = userInitials + " " + clock.text;
+    var result = userInitials.textContent + " " + finalScore.textContent;
     highScoresArray.push(result);
     return result;
 }
 
 function EndQuiz() {
-    console.log("Hello");
+    console.log("Quiz ended");
+    timeDisplay.classList.add('hidden');
     questionPage.classList.add('hidden');
     resultsPage.classList.remove('hidden');
-    finalScore.innerHTML = "Your final score is: " + clock.text;
-    
+    finalScore.innerHTML = "Your final score is: " + clock.textContent;
+    clearInterval(timer);
+}
+
+function ClearHighScores() {
+    highScores.add('hidden');
 }
 
 function DisplayHighScores() {
