@@ -4,7 +4,6 @@ startBtn.addEventListener('click', Timer);
 
 const submitBtn = document.getElementById("submit-button");
 submitBtn.addEventListener('click', DisplayHighScores);
-submitBtn.addEventListener('click', UserSubmit);
 
 const goBackBtn = document.getElementById("back-button");
 goBackBtn.addEventListener('click', RestartQuiz);
